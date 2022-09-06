@@ -454,6 +454,9 @@ button {
   color: var(--social-icons-color);
   border: 1px solid var(--social-icons-color);
   border-radius: 4px;
+
+  transition: color var(--animation-time) var(--time-function),
+    border-color var(--animation-time) var(--time-function);
 }
 .partners-link:hover,
 .partners-link:focus {
@@ -490,6 +493,10 @@ button {
   letter-spacing: 0.03em;
   color: var(--header-color);
   background-color: var(--accent-background-color);
+
+  transition: color var(--animation-time) var(--time-function),
+    background-color var(--animation-time) var(--time-function),
+    box-shadow var(--animation-time) var(--time-function);
 }
 .portfolio-btn:hover,
 .portfolio-btn:focus {
@@ -509,6 +516,10 @@ button {
   margin-right: 30px;
   margin-bottom: 30px;
 }
+.works-link {
+  transition: box-shadow var(--animation-time) var(--time-function);
+}
+
 .works-link:hover,
 .works-link:focus {
   display: block;
