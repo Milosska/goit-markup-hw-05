@@ -1,12 +1,13 @@
 /*---------------------------- global------------------------------------ */
 :root {
-  /* ========== background colors ===========*/
+  /* ================= background colors ===============*/
   --main-background-color: #ffffff;
   --accent-background-color: #f5f4fa;
   --header-color: #212121;
   --footer-bcg-color: #2f303a;
   --footer-links-bcg: rgba(255, 255, 255, 0.1);
-  /* ============= text colors ============== */
+  --modal-window: rgba(0, 0, 0, 0.2);
+  /* ==================== text colors ================ */
   --main-text-color: #757575;
   --portfolio-bcg-color: #eeeeee;
   --logo-main-color: #000000;
@@ -20,7 +21,7 @@
   /* ========= text settings ======================== */
   --main-font: 'Roboto', sans-serif;
   --secondary-font: 'Raleway', sans-serif;
-  /* ============== animation ================= */
+  /* ==================== animation ================= */
   --time-function: cubic-bezier(0.4, 0, 0.2, 1);
   --animation-time: 250ms;
 }
@@ -468,6 +469,59 @@ button {
   height: 60px;
   fill: currentColor;
 }
+
+/* ============================ модальне вікно   ====================== */
+.backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: var(--modal-window);
+  opacity: 1;
+
+  transition: opacity var(--animation-time) var(--time-function);
+}
+.backdrop.is-hidden {
+  opacity: 0;
+  pointer-events: none;
+  /* visibility: hidden; */
+}
+.modal {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(1);
+  transition: transform var(--animation-time) var(--time-function);
+
+  width: 528px;
+  height: 581px;
+  border-radius: 4px;
+
+  background-color: #ffffff;
+  box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14),
+    0px 2px 1px rgba(0, 0, 0, 0.2);
+}
+.backdrop.is-hidden .modal {
+  transform: translate(-50%, -50%) scale(0.5);
+}
+.modal-btn {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  width: 30px;
+  height: 30px;
+  background: #ffffff;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 50%;
+}
+
+/* ========================== кінець модально вікна ====================== */
 
 /* ------------------------------ portfolio -----------------------------*/
 .portfolio {
