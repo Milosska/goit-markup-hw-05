@@ -655,7 +655,7 @@ button {
   line-height: 1.6;
   color: var(--effects-text);
 }
-/*--------------------- підпис та тінь ------------------  */
+/*--------------------- підпис ------------------  */
 .works-shadow {
   padding: 20px 24px;
   border: 1px solid var(--portfolio-border);
