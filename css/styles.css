@@ -7,6 +7,7 @@
   --footer-bcg-color: #2f303a;
   --footer-links-bcg: rgba(255, 255, 255, 0.1);
   --activities-text-bcg: rgba(47, 48, 58, 0.8);
+  --portfolio-cards-hover: rgba(33, 150, 243, 0.9);
   --modal-window: rgba(0, 0, 0, 0.2);
   /* ==================== text colors ================ */
   --main-text-color: #757575;
@@ -15,7 +16,7 @@
   --footer-contacts-color: rgba(225, 225, 225, 0.6);
   --footer-links-text: #ffffff;
   --text-and-button-accent: #2196f3;
-  --activities-text: #ffffff;
+  --effects-text: #ffffff;
   /* ========== decorative elements colors ========== */
   --header-line-color: #ececec;
   --portfolio-border: #eeeeee;
@@ -414,7 +415,7 @@ button {
   font-weight: 700;
   text-align: center;
   text-transform: uppercase;
-  color: var(--activities-text);
+  color: var(--effects-text);
 }
 
 /*----------------------------------- Наша команда ----------------------- */
@@ -558,12 +559,13 @@ button {
   border-radius: 50%;
 }
 
-/* ========================== кінець модально вікна ====================== */
+/* ========================== кінець модального вікна ====================== */
 
-/* ------------------------------ portfolio -----------------------------*/
+/* ========================= portfolio page =================================*/
 .portfolio {
   background-color: var(--main-background-color);
 }
+/* ---------------------- кнопки -------------------- */
 .portfolio-list {
   display: flex;
   justify-content: center;
@@ -596,6 +598,7 @@ button {
   box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.1), 0px 1px 2px rgba(0, 0, 0, 0.08),
     0px 2px 2px rgba(0, 0, 0, 0.12);
 }
+/* ----------------------- картки -------------------- */
 .works-list {
   display: flex;
   flex-wrap: wrap;
@@ -617,6 +620,42 @@ button {
   box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06),
     1px 4px 6px rgba(0, 0, 0, 0.16);
 }
+/*--------------------- оверлей ------------------  */
+.portfolio-img-thumb {
+  position: relative;
+  overflow: hidden;
+}
+.portfolio-overlay {
+  position: absolute;
+  bottom: 0;
+
+  transform: translateY(100%);
+  opacity: 0;
+  transition: transform var(--animation-time) var(--time-function),
+    opacity var(--animation-time) var(--time-function);
+
+  display: flex;
+  align-items: center;
+
+  width: 100%;
+  height: 100%;
+  background-color: var(--portfolio-cards-hover);
+}
+.works-link:hover .portfolio-overlay,
+.works-link:focus .portfolio-overlay {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+.portfolio-overlay-text {
+  display: inline-block;
+  padding: 0 24px;
+
+  font-size: 18px;
+  line-height: 1.6;
+  color: var(--effects-text);
+}
+/*--------------------- підпис та тінь ------------------  */
 .works-shadow {
   padding: 20px 24px;
   border: 1px solid var(--portfolio-border);
@@ -635,3 +674,5 @@ button {
   line-height: 1.88;
   letter-spacing: 0.03em;
 }
+
+/* ========================= portfolio page end ==============================*/
