@@ -20,7 +20,11 @@
   /* ========= text settings ======================== */
   --main-font: 'Roboto', sans-serif;
   --secondary-font: 'Raleway', sans-serif;
+  /* ============== animation ================= */
+  --time-function: cubic-bezier(0.4, 0, 0.2, 1);
+  --animation-time: 250ms;
 }
+
 body {
   background-color: var(--main-background-color);
   color: var(--main-text-color);
@@ -130,6 +134,8 @@ button {
 .menu-link {
   display: inline-block;
   color: var(--header-color);
+
+  transition: color var(--animation-time) var(--time-function);
 }
 .current {
   color: var(--text-and-button-accent);
@@ -153,6 +159,7 @@ button {
   align-items: center;
 
   color: var(--main-text-color);
+  transition: color var(--animation-time) var(--time-function);
 }
 .icon-envelope {
   width: 16px;
@@ -193,6 +200,9 @@ button {
 .address-item:not(:last-child) {
   margin-bottom: 10px;
 }
+.address-link {
+  transition: color var(--animation-time) var(--time-function);
+}
 .map {
   color: var(--main-background-color);
 }
@@ -229,6 +239,9 @@ button {
   border-radius: 50%;
   background-color: var(--footer-links-bcg);
   color: var(--main-background-color);
+
+  transition: color var(--animation-time) var(--time-function),
+    background-color var(--animation-time) var(--time-function);
 }
 .social-footer:hover,
 .social-footer:focus {
